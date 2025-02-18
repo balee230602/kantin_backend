@@ -46,6 +46,7 @@ class ProductController extends Controller
         $products->stock = (int) $request->stock;
         $products->category = $request->category;
         $products->image = $filename;
+        $products->description = $request->description ?? 'Default description';
         $products->save();
        //\App\Models\Product::create($data);
         return redirect()->route('product.index')->with('success','product successfully created');
