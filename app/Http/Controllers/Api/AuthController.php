@@ -86,10 +86,10 @@ class AuthController extends Controller
          //   'message'=>['Password not match'],
          //   ],404);
     }
-    
+
     public function logout(Request $request)
     {
-    $request->user()->currentAccesgToken()->delete();
+    $request->user()->currentAccessToken()->delete();
     return response()->json([
         'message'=>'Logout success',
     ]);
